@@ -1,0 +1,35 @@
+{
+  "name": "clean-code-and-clean-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc:init": "tsc --init",
+    "build": "tsc",
+    "test": "tsc && jest dist/ --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uncodle/typescript-clean-code-and-clean-architecture.git"
+  },
+  "keywords": [
+    "typescript",
+    "clean",
+    "code",
+    "clean",
+    "architecture"
+  ],
+  "author": "uncodle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uncodle/typescript-clean-code-and-clean-architecture/issues"
+  },
+  "homepage": "https://github.com/Uncodle/typescript-clean-code-and-clean-architecture#readme",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3"
+  }
+}
