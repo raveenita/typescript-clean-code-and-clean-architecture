@@ -1,6 +1,8 @@
-# TDD (Test Driven Development)
+# Clean Architecture & Clean Code
 
-![Pirâmide de testes](image.png)
+## TDD (Test Driven Development)
+
+![Pirâmide de testes](./src/assets/image.png)
 
 Tenha uma combinação de diversos tipos de testes, pois somente testes de unidade não garantem que um sistema funciona.
 
