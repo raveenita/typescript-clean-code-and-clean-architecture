@@ -36,7 +36,7 @@ test('Should create a order with 3 itens with a coupon', () => {
     order.addItem(new Item(2, 'Vídeo', 'DVD', 50), 1);
     order.addItem(new Item(3, 'Vídeo', 'VHS', 10), 2);
 
-    order.addCoupon(new Coupon('VALE20', 20));
+    order.addCoupon(new Coupon('VALE20', 20, new Date('2024-12-01')));
 
     const total = order.getTotal();
     expect(total).toBe(128);

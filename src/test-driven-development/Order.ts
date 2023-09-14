@@ -28,7 +28,7 @@ export class Order {
         }
 
         if (this.coupon) {
-            total -= this.coupon.applyDiscount(total);
+            total = this.coupon.calculateDiscount(total);
         }
 
         return total;
