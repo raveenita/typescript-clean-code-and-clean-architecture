@@ -1,4 +1,4 @@
-import CurrencyAPI from "../CurrencyAPI";
+import CurrencyAPI from "../../domain/entity/CurrencyAPI";
 
 export default class CurrencyAPIFake implements CurrencyAPI {
     convert(amount: number, currency: string): number {

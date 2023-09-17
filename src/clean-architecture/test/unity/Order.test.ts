@@ -1,6 +1,7 @@
-import Coupon from "../Coupon";
-import Item from "../Item";
-import { Order } from "../Order";
+import Coupon from "../../domain/entity/Coupon";
+import DefaultFreightCalculator from "../../domain/entity/DefaultFreightCalculator";
+import Item from "../../domain/entity/Item";
+import Order from "../../domain/entity/Order";
 
 test('Should create a order with a valid CPF', () => {
     const cpf = '839.435.452-10';
@@ -40,4 +41,16 @@ test('Should create a order with 3 itens with a coupon', () => {
 
     const total = order.getTotal();
     expect(total).toBe(128);
+});
+
+test('Should create a order with 3 itens with freight calculation', () => {
+    const cpf = '839.435.452-10';
+    const order = new Order(cpf, new Date(), new DefaultFreightCalculator());
+
+    order.addItem(new Item(4, 'Instrumentos musicais', 'Guitarra', 5000, 100, 30, 10, 3), 1);
+    order.addItem(new Item(5, 'Instrumentos musicais', 'Amplificador', 1000, 100, 50, 50, 20), 1);
+    order.addItem(new Item(6, 'Acessórios', 'Cabo', 10, 10, 10, 10, 0.9), 3);
+    
+    const freight = order.getFreight();
+    expect(freight).toBe(260);
 });

@@ -12,12 +12,10 @@ export default class Coupon {
         return !this.isValid(today);
     }
 
-    calculateDiscount(amount: number): number {
-        if(this.isExpired()) return amount;
+    calculateDiscount(amount: number, today: Date = new Date()): number {
+        if(this.isExpired(today)) return amount;
 
-        const updatedAmount = amount - this.applyDiscount(amount);
-        
-        return updatedAmount; 
+        return this.applyDiscount(amount);
     }
 
     applyDiscount(amount: number) {

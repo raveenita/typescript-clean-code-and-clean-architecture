@@ -1,6 +1,6 @@
 import Sinon from "sinon";
-import Account from "../Account";
 import CurrencyAPIFake from "./CurrencyAPIFake";
+import Account from "../../domain/entity/Account";
 
 let account: Account;
 let currencyApi: CurrencyAPIFake;

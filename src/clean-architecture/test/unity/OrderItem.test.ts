@@ -1,4 +1,4 @@
-import OrderItem from "../OrderItem";
+import OrderItem from "../../domain/entity/OrderItem";
 
 test('Should create a order item', () => {
     const orderItem = new OrderItem(1, 1000, 2);
