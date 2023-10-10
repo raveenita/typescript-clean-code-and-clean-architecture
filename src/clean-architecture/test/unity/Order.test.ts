@@ -54,3 +54,15 @@ test('Should create a order with 3 itens with freight calculation', () => {
     const freight = order.getFreight();
     expect(freight).toBe(260);
 });
+
+test('Should create a order with code', () => {
+    const cpf = '839.435.452-10';
+const order = new Order(cpf, new Date(), new DefaultFreightCalculator());
+
+    order.addItem(new Item(4, 'Instrumentos musicais', 'Guitarra', 5000, 100, 30, 10, 3), 1);
+    order.addItem(new Item(5, 'Instrumentos musicais', 'Amplificador', 1000, 100, 50, 50, 20), 1);
+    order.addItem(new Item(6, 'Acessórios', 'Cabo', 10, 10, 10, 10, 0.9), 3);
+    
+    const code = order.getCode();
+    expect(code).toBe("202300000001");
+});

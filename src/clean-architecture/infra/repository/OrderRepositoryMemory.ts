@@ -15,4 +15,8 @@ export default class OrderRepositoryMemory implements OrderRepository {
        return Promise.resolve();
     }
 
+    count() {
+        return Promise.resolve(this.orders.length);
+    }
+
 }
