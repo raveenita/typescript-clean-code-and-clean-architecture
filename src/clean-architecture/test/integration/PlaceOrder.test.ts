@@ -1,14 +1,9 @@
 import PlaceOrder from "../../application/use-case/PlaceOrder";
 import PlaceOrderInput from "../../application/use-case/PlaceOrderInput";
-import CouponRepositoryMemory from "../../infra/repository/CouponRepositoryMemory";
-import ItemRepositoryMemory from "../../infra/repository/ItemRepositoryMemory";
-import OrderRepositoryMemory from "../../infra/repository/OrderRepositoryMemory";
+import MemoryRepositoryFactory from "../../infra/factory/MemoryRepositoryFactory";
 
 test('should do a order', async function() {
-    const itemRepository = new ItemRepositoryMemory();
-    const orderRepository = new OrderRepositoryMemory();
-    const couponRepository = new CouponRepositoryMemory();
-    const placeOrder = new PlaceOrder(itemRepository, orderRepository, couponRepository);
+    const placeOrder = new PlaceOrder(new MemoryRepositoryFactory());
     const input: PlaceOrderInput = {
         cpf: "839.435.452-10",
         orderItems: [
@@ -26,10 +21,7 @@ test('should do a order', async function() {
 });
 
 test('should do a order with code', async function() {
-    const itemRepository = new ItemRepositoryMemory();
-    const orderRepository = new OrderRepositoryMemory();
-    const couponRepository = new CouponRepositoryMemory();
-    const placeOrder = new PlaceOrder(itemRepository, orderRepository, couponRepository);
+    const placeOrder = new PlaceOrder(new MemoryRepositoryFactory());
     const input: PlaceOrderInput = {
         cpf: "839.435.452-10",
         orderItems: [
